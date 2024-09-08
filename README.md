@@ -973,6 +973,21 @@ the `replication` keyword when creating a connection:
 ```
 
 
+### PostgreSQL-Style Parameter Placeholders
+
+```python
+>>> import pg8000.native
+>>>
+>>> con = pg8000.native.Connection('postgres', password="cpsnow")
+>>>
+>>> con.run("SELECT $1", title='A Time Of Hope')
+[['A Time Of Hope']]
+>>>
+>>> con.close()
+
+```
+
+
 ## DB-API 2 Interactive Examples
 
 These examples stick to the DB-API 2.0 standard.
